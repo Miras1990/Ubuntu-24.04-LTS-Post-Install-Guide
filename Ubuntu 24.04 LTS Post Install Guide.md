@@ -15,13 +15,6 @@ sudo fwupdmgr get-updates # Fetches list of available updates.
 sudo fwupdmgr update
 ```
 
-## Reduce the Systemd timeout for services
-```
-sudo nano /etc/systemd/system.conf
-DefaultTimeoutStartSec=15s
-DefaultTimeoutStopSec=15s
-```
-
 ## Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
 * Install the Intel graphics GPG public key:
 ```
@@ -48,3 +41,35 @@ sudo apt install intel-level-zero-gpu-raytracing
 sudo gpasswd -a ${USER} render
 newgrp render
 ```
+
+## Install and Enable Intel Thermal Daemon (Thermald) - https://github.com/intel/thermal_daemon
+```
+sudo apt install thermald
+sudo systemctl enable thermald.service
+sudo systemctl start thermald.service
+sudo systemctl status thermald.service
+```
+
+## Media Codecs
+* Install these to get proper multimedia playback.
+```
+sudo apt install ubuntu-restricted-extras
+```
+
+### H/W Video Decoding with VA-API 
+```
+sudo apt install vainfo libva ffmpeg
+```
+* VAAPI driver for Intel G45 & HD Graphics family
+```
+sudo apt install i965-va-driver
+```
+* VAAPI driver for the Intel GEN8+ Graphics family
+```
+sudo apt install intel-media-va-driver intel-media-va-driver-non-free
+```
+* For NVIDIA nouveau and AMD Chipset:
+```
+sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
+```
+
