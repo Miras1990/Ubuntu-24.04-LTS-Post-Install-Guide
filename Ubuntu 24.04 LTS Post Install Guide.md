@@ -35,7 +35,9 @@ sudo apt install libze-intel-gpu1 libze1 intel-opencl-icd clinfo intel-gsc libze
 sudo apt install intel-level-zero-gpu-raytracing
 ```
 * Verifying installation
-* `clinfo | grep "Device Name"`
+```
+clinfo | grep "Device Name"
+```
 * You should see the Intel graphics product device names listed. If they do not appear, ensure you have permissions to access /dev/dri/renderD*
 ```
 sudo gpasswd -a ${USER} render
@@ -78,7 +80,9 @@ sudo apt install i965-va-driver`
 sudo apt install intel-media-va-driver intel-media-va-driver-non-free`
 ```
 * For NVIDIA nouveau and AMD Chipset:
-* sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all`
+```
+sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
+```
 
 ## Microsoft Fonts:
 ```
@@ -160,11 +164,39 @@ sudo apt install gufw
 sudo ufw enable
 ```
 
-### Ricks-Lab GPU Utilities - monitoring AMD GPU - https://github.com/Ricks-Lab/gpu-utils:
-* `sudo apt install clinfo ricks-amdgpu-utils`
+### [Ricks-Lab GPU Utilities](https://github.com/Ricks-Lab/gpu-utils) - monitoring AMD GPU
+```
+sudo apt install clinfo ricks-amdgpu-utils`
+```
 
 ### Disable `NetworkManager-wait-online.service`
 * Disabling it can decrease the boot time by at least ~15s-20s:
-* `sudo systemctl disable NetworkManager-wait-online.service`
+```
+sudo systemctl disable NetworkManager-wait-online.service
+```
 
+### Better Linux Disk Caching & Performance with vm.dirty_ratio & vm.dirty_background_ratio
+```
+vm.dirty_background_ratio = 5
+vm.dirty_background_bytes = 0
+vm.dirty_ratio = 10
+vm.dirty_bytes = 0
+vm.dirty_writeback_centisecs = 500
+vm.dirty_expire_centisecs = 3000
+```
+
+### Gnome Extensions and Tweaks
+```
+sudo apt install gnome-tweaks dconf-editor gnome-browser-connector gnome-shell-extension-manager
+```
+
+### Quickly Enable Minimise on Click in Ubuntu Dock
+```
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+```
+
+### GNOME volume step adjustment
+```
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
+```
 
