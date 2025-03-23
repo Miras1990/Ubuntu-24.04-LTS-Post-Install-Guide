@@ -45,12 +45,18 @@ newgrp render
 ```
 * [More info](https://dgpu-docs.intel.com/driver/client/overview.html)
 
-## NVIDIA Drivers and [Cuda Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
+## [NVIDIA Cuda Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
+```
+
+## NVIDIA Drivers from ppa
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
 ```
 
 ## Install and Enable Intel Thermal Daemon [Thermald](https://github.com/intel/thermal_daemon)
@@ -200,3 +206,33 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 ```
 
+### Gnome Extensions
+* [Quick Settings Tweaker](https://github.com/qwreey75/quick-settings-tweaks)
+* [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+* [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+* [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+* [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+* [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+* [Logo Menu](https://extensions.gnome.org/extension/4451/logo-menu/)
+* [Space Bar](https://github.com/christopher-l/space-bar)
+
+## Apps
+unzip
+p7zip
+p7zip-full
+unrar
+Blender
+Discord 
+Spotify
+GIMP
+Handbrake
+Krita
+Transmission
+vlc
+darktable
+rawtherapee
+mc
+bpytop
+inxi
+libreoffice
+audacity
