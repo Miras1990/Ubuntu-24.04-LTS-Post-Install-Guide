@@ -181,8 +181,10 @@ sudo apt install clinfo ricks-amdgpu-utils`
 sudo systemctl disable NetworkManager-wait-online.service
 ```
 
-### Better Linux Disk Caching & Performance with vm.dirty_ratio & vm.dirty_background_ratio
+### Better Linux Disk Caching & Performance with vm.dirty_ratio & vm.dirty_background_ratio & Sharply reduce swap inclination
 ```
+vm.swappiness = 1
+vm.vfs_cache_pressure = 50
 vm.dirty_background_ratio = 5
 vm.dirty_background_bytes = 0
 vm.dirty_ratio = 10
