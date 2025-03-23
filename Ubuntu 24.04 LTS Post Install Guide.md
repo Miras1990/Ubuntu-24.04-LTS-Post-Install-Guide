@@ -34,11 +34,11 @@ sudo apt install libze-intel-gpu1 libze1 intel-opencl-icd clinfo intel-gsc libze
 ```
 sudo apt install intel-level-zero-gpu-raytracing
 ```
-* Verifying installation
+* Verifying installation:
 ```
 clinfo | grep "Device Name"
 ```
-* You should see the Intel graphics product device names listed. If they do not appear, ensure you have permissions to access /dev/dri/renderD*
+* You should see the Intel graphics product device names listed. If they do not appear, ensure you have permissions to access /dev/dri/renderD*:
 ```
 sudo gpasswd -a ${USER} render
 newgrp render
@@ -68,22 +68,22 @@ sudo systemctl status thermald.service
 ```
 
 ## Media Codecs
-* Install these to get proper multimedia playback.
+* Install these to get proper multimedia playback:
 ```
 sudo apt install ubuntu-restricted-extras libavcodec-extra
 ```
 
 ## H/W Video Decoding with VA-API 
 ```
-sudo apt install vainfo libva ffmpeg`
+sudo apt install vainfo libva ffmpeg
 ```
-* VAAPI driver for Intel G45 & HD Graphics family
+* VAAPI driver for Intel G45 & HD Graphics family:
 ```
-sudo apt install i965-va-driver`
+sudo apt install i965-va-driver
 ```
-* VAAPI driver for the Intel GEN8+ Graphics family
+* VAAPI driver for the Intel GEN8+ Graphics family:
 ```
-sudo apt install intel-media-va-driver intel-media-va-driver-non-free`
+sudo apt install intel-media-va-driver intel-media-va-driver-non-free
 ```
 * For NVIDIA nouveau and AMD Chipset:
 ```
@@ -96,7 +96,7 @@ sudo apt install -y ttf-mscorefonts-installer
 ```
 
 ## [Visual Studio Code on Linux](https://code.visualstudio.com/docs/setup/linux)
-* Manually install the apt repository
+* Manually install the apt repository:
 ```
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -172,7 +172,7 @@ sudo ufw enable
 
 ### [Ricks-Lab GPU Utilities](https://github.com/Ricks-Lab/gpu-utils) - monitoring AMD GPU
 ```
-sudo apt install clinfo ricks-amdgpu-utils`
+sudo apt install clinfo ricks-amdgpu-utils
 ```
 
 ### Disable `NetworkManager-wait-online.service`
@@ -207,6 +207,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ```
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 ```
+
+### Firefox Theme
+* https://github.com/rafaelmardojai/firefox-gnome-theme
 
 ### Gnome Extensions
 * [Quick Settings Tweaker](https://github.com/qwreey75/quick-settings-tweaks)
