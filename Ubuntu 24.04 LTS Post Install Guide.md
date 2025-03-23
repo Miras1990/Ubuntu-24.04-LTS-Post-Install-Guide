@@ -7,7 +7,7 @@ sudo apt upgrade
 ```
 
 ## Firmware
-* If your system supports firmware update delivery through lvfs, update your device firmware by:
+* If your system supports firmware update delivery through [lvfs](https://fwupd.org/), update your device firmware by:
 ```
 sudo fwupdmgr refresh --force
 sudo fwupdmgr get-devices # Lists devices with available updates.
@@ -41,8 +41,9 @@ sudo apt install intel-level-zero-gpu-raytracing
 sudo gpasswd -a ${USER} render
 newgrp render
 ```
+* [More info](https://dgpu-docs.intel.com/driver/client/overview.html)
 
-## NVIDIA Drivers and Cuda
+## NVIDIA Drivers and [Cuda Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
@@ -50,7 +51,7 @@ sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
 ```
 
-## Install and Enable Intel Thermal Daemon (Thermald) - https://github.com/intel/thermal_daemon
+## Install and Enable Intel Thermal Daemon [Thermald](https://github.com/intel/thermal_daemon)
 ```
 sudo apt install thermald
 sudo systemctl enable thermald.service
@@ -61,23 +62,109 @@ sudo systemctl status thermald.service
 ## Media Codecs
 * Install these to get proper multimedia playback.
 ```
-sudo apt install ubuntu-restricted-extras
+sudo apt install ubuntu-restricted-extras libavcodec-extra
 ```
 
-### H/W Video Decoding with VA-API 
+## H/W Video Decoding with VA-API 
 ```
-sudo apt install vainfo libva ffmpeg
+sudo apt install vainfo libva ffmpeg`
 ```
 * VAAPI driver for Intel G45 & HD Graphics family
 ```
-sudo apt install i965-va-driver
+sudo apt install i965-va-driver`
 ```
 * VAAPI driver for the Intel GEN8+ Graphics family
 ```
-sudo apt install intel-media-va-driver intel-media-va-driver-non-free
+sudo apt install intel-media-va-driver intel-media-va-driver-non-free`
 ```
 * For NVIDIA nouveau and AMD Chipset:
+* sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all`
+
+## Microsoft Fonts:
 ```
-sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
+sudo apt install -y ttf-mscorefonts-installer
 ```
+
+## [Visual Studio Code on Linux](https://code.visualstudio.com/docs/setup/linux)
+* Manually install the apt repository
+```
+sudo apt-get install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+rm -f packages.microsoft.gpg
+```
+* Then update the package cache and install the package using:
+```
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code
+```
+* VS Code is officially distributed as a Snap package in the [Snap Store](https://snapcraft.io/store)
+* You can install it by running:
+```
+sudo snap install --classic code
+```
+
+## Configuring the system and the GNOME graphical environment
+
+### Set Hostname
+```
+hostnamectl set-hostname YOUR_HOSTNAME
+```
+
+### Set UTC Time
+* Fixing Windows Showing Wrong Time in a Dual Boot Setup With Linux:
+```
+sudo timedatectl set-local-rtc 1
+```
+
+### Enable VAAPI in Firefox "about:config"
+```
+media.ffmpeg.vaapi.enabled  true
+media.navigator.mediadatadecoder_vpx_enabled  true
+layers.acceleration.force-enabled true
+gfx.webrender.enabled true
+gfx.webrender.all true
+gfx.x11-egl.force-enabled true
+```
+
+### Reduce the Systemd timeout for services
+```
+sudo nano /etc/systemd/system.conf
+DefaultTimeoutStartSec=15s
+DefaultTimeoutStopSec=15s
+```
+
+### Enable Support for ntfs-3g and exfat:
+```
+sudo apt install ntfs-3g exfat-fuse
+```
+
+### Enable Trim Support
+```
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+sudo fstrim -v /
+```
+
+### Install lm-sensors and detect all sensors
+```
+sudo apt install lm-sensors
+sudo sensors-detect
+```
+
+### Enable firewall
+```
+sudo apt install gufw
+sudo ufw enable
+```
+
+### Ricks-Lab GPU Utilities - monitoring AMD GPU - https://github.com/Ricks-Lab/gpu-utils:
+* `sudo apt install clinfo ricks-amdgpu-utils`
+
+### Disable `NetworkManager-wait-online.service`
+* Disabling it can decrease the boot time by at least ~15s-20s:
+* `sudo systemctl disable NetworkManager-wait-online.service`
+
 
