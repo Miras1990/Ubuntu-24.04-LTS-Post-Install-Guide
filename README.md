@@ -176,7 +176,7 @@ vm.dirty_expire_centisecs = 3000
 
 ### Gnome Extensions and Tweaks
 ```
-sudo apt install gnome-tweaks dconf-editor gnome-browser-connector gnome-shell-extension-manager
+sudo apt install gnome-tweaks dconf-editor gnome-browser-connector
 ```
 
 ### Quickly Enable Minimise on Click in Ubuntu Dock
@@ -195,12 +195,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 ### Gnome Extensions
 * [Quick Settings Tweaker](https://github.com/qwreey75/quick-settings-tweaks)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-* [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-* [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-* [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-* [Logo Menu](https://extensions.gnome.org/extension/4451/logo-menu/)
-* [Space Bar](https://github.com/christopher-l/space-bar)
 
 ## Apps
 unzip
