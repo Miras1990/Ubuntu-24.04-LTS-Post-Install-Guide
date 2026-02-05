@@ -87,7 +87,7 @@ sudo apt install vainfo libva ffmpeg
 ```
 sudo apt install i965-va-driver
 ```
-```
+
 * For NVIDIA nouveau and AMD Chipset:
 ```
 sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
