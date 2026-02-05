@@ -15,35 +15,41 @@ sudo fwupdmgr get-updates # Fetches list of available updates.
 sudo fwupdmgr update
 ```
 
-## Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
-* Install the Intel graphics GPG public key:
+## Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver (https://dgpu-docs.intel.com/driver/client/overview.html)
+Refresh the local package index and install the package for managing software repositories.
 ```
-wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
-  sudo gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+sudo apt update
+sudo apt install software-properties-common
 ```
-* Configure the repositories.intel.com package repository:
+Add the intel-graphics PPA.
 ```
-echo "deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble unified" | \
-  sudo tee /etc/apt/sources.list.d/intel-gpu-noble.list
+sudo add-apt-repository -y ppa:kobuk-team/intel-graphics
 ```
-* Update the package repository metadata and Install the compute-related packages:
+Install the compute-related packages.
 ```
-sudo apt install libze-intel-gpu1 libze1 intel-opencl-icd clinfo intel-gsc libze-dev intel-ocloc
+sudo apt install libze-intel-gpu1 libze1 intel-metrics-discovery intel-opencl-icd clinfo intel-gsc
 ```
-* If you wish to enable hardware ray tracing support, install intel-level-zero-gpu-raytracing additionally:
+Install the media-related packages.
 ```
-sudo apt install intel-level-zero-gpu-raytracing
+sudo apt install intel-media-va-driver-non-free libmfx-gen1 libvpl2 libvpl-tools libva-glx2 va-driver-all vainfo
 ```
-* Verifying installation:
+The commands listed above install all the essential packages needed for most users, aiming to minimize the installation of unnecessary packages. However, if you plan to use PyTorch, install libze-dev and intel-ocloc additionally:
+```
+sudo apt install libze-dev intel-ocloc
+```
+If you wish to enable hardware ray tracing support, install libze-intel-gpu-raytracing additionally:
+```
+sudo apt install libze-intel-gpu-raytracing
+```
+To verify that the kernel and compute drivers are installed and functional, run clinfo:
 ```
 clinfo | grep "Device Name"
 ```
-* You should see the Intel graphics product device names listed. If they do not appear, ensure you have permissions to access /dev/dri/renderD*:
+You should see the Intel graphics product device names listed. If they do not appear, ensure you have permissions to access /dev/dri/renderD*. This typically requires your user to be in the render group:
 ```
 sudo gpasswd -a ${USER} render
 newgrp render
 ```
-* [More info](https://dgpu-docs.intel.com/driver/client/overview.html)
 
 ## [NVIDIA Cuda Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
 ```
@@ -59,7 +65,7 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
 ```
 
-## Install and Enable Intel Thermal Daemon [Thermald](https://github.com/intel/thermal_daemon)
+## Install and Enable Intel Thermal Daemon [Thermald](https://github.com/intel/thermal_daemon) - Intel Platform
 ```
 sudo apt install thermald
 sudo systemctl enable thermald.service
@@ -81,18 +87,10 @@ sudo apt install vainfo libva ffmpeg
 ```
 sudo apt install i965-va-driver
 ```
-* VAAPI driver for the Intel GEN8+ Graphics family:
-```
-sudo apt install intel-media-va-driver intel-media-va-driver-non-free
 ```
 * For NVIDIA nouveau and AMD Chipset:
 ```
 sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
-```
-
-## Microsoft Fonts:
-```
-sudo apt install -y ttf-mscorefonts-installer
 ```
 
 ## [Visual Studio Code on Linux](https://code.visualstudio.com/docs/setup/linux)
