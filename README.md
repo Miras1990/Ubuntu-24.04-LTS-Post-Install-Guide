@@ -115,12 +115,9 @@ sudo timedatectl set-local-rtc 1
 
 ### Enable VAAPI in Firefox "about:config"
 ```
-media.ffmpeg.vaapi.enabled  true
 media.navigator.mediadatadecoder_vpx_enabled  true
 layers.acceleration.force-enabled true
-gfx.webrender.enabled true
 gfx.webrender.all true
-gfx.x11-egl.force-enabled true
 ```
 
 ### Reduce the Systemd timeout for services
