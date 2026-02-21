@@ -65,7 +65,7 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
 ```
 
-## [Install and Enable Intel Thermal Daemon] [Thermald](https://github.com/intel/thermal_daemon) - Intel Platform
+## [Install and Enable Intel Thermal Daemon](https://github.com/intel/thermal_daemon) - Intel Platform
 ```
 sudo apt install thermald
 sudo systemctl enable thermald.service
@@ -100,8 +100,9 @@ sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
 sudo snap install --classic code
 ```
 
-## [DaVinci Resolve (The program works and detects Intel's integrated graphics)](https://www.blackmagicdesign.com/pl/products/davinciresolve)
+## [DaVinci Resolve](https://www.blackmagicdesign.com/pl/products/davinciresolve)
 ```
+* The program works and detects Intel's integrated graphics!
 * Installation
 sudo apt install libfuse2t64 libapr1t64 libaprutil1t64 libasound2t64 libglib2.0-0t64 libxcb-composite0 libxcb-cursor0 libxcb-xinerama0 libxcb-xinput0
 unzip DaVinci_Resolve_Studio_*_Linux.zip
