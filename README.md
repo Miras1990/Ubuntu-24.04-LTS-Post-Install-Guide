@@ -117,7 +117,7 @@ sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
 sudo mv /opt/resolve/libs/libgmodule* /opt/resolve/libs/unneeded/
 ```
 
-## DeepCool Digital for Linux (https://github.com/Nortank12/deepcool-digital-linux)
+## [DeepCool Digital for Linux](https://github.com/Nortank12/deepcool-digital-linux)
 
 * Automatic Start with Systemd 
 ```
