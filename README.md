@@ -100,7 +100,7 @@ sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
 sudo snap install --classic code
 ```
 
-## DaVinci Resolve (The program works and detects Intel's integrated graphics)
+## DaVinci Resolve (The program works and detects Intel's integrated graphics)(https://www.blackmagicdesign.com/pl/products/davinciresolve)
 ```
 * Installation
 sudo apt install libfuse2t64 libapr1t64 libaprutil1t64 libasound2t64 libglib2.0-0t64 libxcb-composite0 libxcb-cursor0 libxcb-xinerama0 libxcb-xinput0
