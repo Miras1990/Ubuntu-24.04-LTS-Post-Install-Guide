@@ -158,12 +158,12 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make
 ```
-*Installation:
+* Installation:
 ```
 sudo make install
 ```
 Download [logid.example.cfg](https://github.com/PixlOne/logiops/blob/main/logid.example.cfg) file and copy its contents to "/etc/logid.cfg"
-* Enable service
+* Enable service:
 ```
 sudo systemctl enable --now logid
 ```
