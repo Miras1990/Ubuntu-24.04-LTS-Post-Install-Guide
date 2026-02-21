@@ -81,7 +81,7 @@ sudo apt install ubuntu-restricted-extras libavcodec-extra
 
 ## H/W Video Decoding with VA-API 
 ```
-sudo apt install vainfo libva ffmpeg
+sudo apt install vainfo libva2 ffmpeg
 ```
 * VAAPI driver for Intel G45 & HD Graphics family:
 ```
