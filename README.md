@@ -141,6 +141,8 @@ sudo fstrim -v /
 
 ### Install lm-sensors and detect all sensors
 ```
+Add module nct6775:
+sudo nano /etc/modules-load.d/modules.conf
 sudo apt install lm-sensors
 sudo sensors-detect
 ```
