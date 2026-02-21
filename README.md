@@ -143,6 +143,30 @@ WantedBy=multi-user.target
 ```
 sudo systemctl enable deepcool-digital
 ```
+## [LogiOps](https://github.com/PixlOne/logiops)
+
+* Dependencies:
+```
+sudo apt install build-essential cmake pkg-config libevdev-dev libudev-dev libconfig++-dev libglib2.0-dev git
+```
+* Building:
+```
+git clone https://github.com/PixlOne/logiops.git
+cd logiops/
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+```
+*Installation:
+```
+sudo make install
+```
+Download [logid.example.cfg](https://github.com/PixlOne/logiops/blob/main/logid.example.cfg) file and copy its contents to "/etc/logid.cfg"
+* Enable service
+```
+sudo systemctl enable --now logid
+```
 
 ## Configuring the system and the GNOME graphical environment
 
