@@ -15,7 +15,7 @@ sudo fwupdmgr get-updates # Fetches list of available updates.
 sudo fwupdmgr update
 ```
 
-## [Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver] (https://dgpu-docs.intel.com/driver/client/overview.html)
+## [Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver](https://dgpu-docs.intel.com/driver/client/overview.html)
 Refresh the local package index and install the package for managing software repositories.
 ```
 sudo apt update
