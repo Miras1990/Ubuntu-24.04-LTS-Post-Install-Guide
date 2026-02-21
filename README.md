@@ -110,7 +110,6 @@ chmod +x ./DaVinci_Resolve_Studio_*_Linux.run
 sudo SKIP_PACKAGE_CHECK=1 ./DaVinci_Resolve_Studio_*_Linux.run -i
 
 * Repair (/opt/resolve/bin/resolve: symbol lookup error: /lib/x86_64-linux-gnu/libpango-1.0.so.0: undefined symbol: g_once_init_leave_pointer):
-cd /opt/resolve/libs
 sudo mkdir /opt/resolve/libs/unneeded
 sudo mv /opt/resolve/libs/libgio* /opt/resolve/libs/unneeded/
 sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
