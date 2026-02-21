@@ -114,6 +114,8 @@ sudo mkdir /opt/resolve/libs/unneeded
 sudo mv /opt/resolve/libs/libgio* /opt/resolve/libs/unneeded/
 sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
 sudo mv /opt/resolve/libs/libgmodule* /opt/resolve/libs/unneeded/
+
+[Source](https://www.dedoimedo.com/computers/davinci-resolve-ubuntu-24-04.html)
 ```
 
 ## [DeepCool Digital for Linux](https://github.com/Nortank12/deepcool-digital-linux)
