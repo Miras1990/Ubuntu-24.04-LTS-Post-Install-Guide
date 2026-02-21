@@ -260,11 +260,13 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
-## [Visual Studio Code on Linux](https://code.visualstudio.com/docs/setup/linux)
-* VS Code is officially distributed as a Snap package in the [Snap Store](https://snapcraft.io/store)
-* You can install it by running:
+## Snaps
 ```
 sudo snap install --classic code
+sudo snap install --classic blender
+sudo snap install discord
+sudo snap install spotify
+
 ```
 
 ## Apps
@@ -276,12 +278,8 @@ sudo snap install --classic code
 * Discord 
 * Spotify
 * GIMP
-* Handbrake
-* Krita
-* Transmission
 * vlc
 * darktable
-* rawtherapee
 * mc
 * bpytop
 * inxi
