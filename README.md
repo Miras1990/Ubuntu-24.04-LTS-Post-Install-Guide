@@ -93,13 +93,6 @@ sudo apt install i965-va-driver
 sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
 ```
 
-## [Visual Studio Code on Linux](https://code.visualstudio.com/docs/setup/linux)
-* VS Code is officially distributed as a Snap package in the [Snap Store](https://snapcraft.io/store)
-* You can install it by running:
-```
-sudo snap install --classic code
-```
-
 ## [DaVinci Resolve](https://www.blackmagicdesign.com/pl/products/davinciresolve)
 
 * The program works and detects Intel's integrated graphics!
@@ -266,6 +259,13 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 * [Quick Settings Tweaker](https://github.com/qwreey75/quick-settings-tweaks)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+
+## [Visual Studio Code on Linux](https://code.visualstudio.com/docs/setup/linux)
+* VS Code is officially distributed as a Snap package in the [Snap Store](https://snapcraft.io/store)
+* You can install it by running:
+```
+sudo snap install --classic code
+```
 
 ## Apps
 unzip
