@@ -101,15 +101,17 @@ sudo snap install --classic code
 ```
 
 ## [DaVinci Resolve](https://www.blackmagicdesign.com/pl/products/davinciresolve)
-```
+
 * The program works and detects Intel's integrated graphics!
 * Installation
+```
 sudo apt install libfuse2t64 libapr1t64 libaprutil1t64 libasound2t64 libglib2.0-0t64 libxcb-composite0 libxcb-cursor0 libxcb-xinerama0 libxcb-xinput0
 unzip DaVinci_Resolve_Studio_*_Linux.zip
 chmod +x ./DaVinci_Resolve_Studio_*_Linux.run
 sudo SKIP_PACKAGE_CHECK=1 ./DaVinci_Resolve_Studio_*_Linux.run -i
-
+```
 * Repair (/opt/resolve/bin/resolve: symbol lookup error: /lib/x86_64-linux-gnu/libpango-1.0.so.0: undefined symbol: g_once_init_leave_pointer):
+```
 sudo mkdir /opt/resolve/libs/unneeded
 sudo mv /opt/resolve/libs/libgio* /opt/resolve/libs/unneeded/
 sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
