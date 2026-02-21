@@ -268,22 +268,22 @@ sudo snap install --classic code
 ```
 
 ## Apps
-unzip
-p7zip
-p7zip-full
-unrar
-Blender
-Discord 
-Spotify
-GIMP
-Handbrake
-Krita
-Transmission
-vlc
-darktable
-rawtherapee
-mc
-bpytop
-inxi
-libreoffice
-audacity
+* unzip
+* p7zip
+* p7zip-full
+* unrar
+* Blender
+* Discord 
+* Spotify
+* GIMP
+* Handbrake
+* Krita
+* Transmission
+* vlc
+* darktable
+* rawtherapee
+* mc
+* bpytop
+* inxi
+* libreoffice
+* audacity
