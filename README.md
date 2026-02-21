@@ -100,6 +100,47 @@ sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
 sudo snap install --classic code
 ```
 
+## DaVinci Resolve (The program works and detects Intel's integrated graphics)
+```
+* Installation
+sudo apt install libfuse2t64 libapr1t64 libaprutil1t64 libasound2t64 libglib2.0-0t64 libxcb-composite0 libxcb-cursor0 libxcb-xinerama0 libxcb-xinput0
+unzip DaVinci_Resolve_Studio_*_Linux.zip
+chmod +x ./DaVinci_Resolve_Studio_*_Linux.run
+sudo SKIP_PACKAGE_CHECK=1 ./DaVinci_Resolve_Studio_*_Linux.run -i
+
+* Repair (/opt/resolve/bin/resolve: symbol lookup error: /lib/x86_64-linux-gnu/libpango-1.0.so.0: undefined symbol: g_once_init_leave_pointer):
+cd /opt/resolve/libs
+sudo mkdir /opt/resolve/libs/unneeded
+sudo mv /opt/resolve/libs/libgio* /opt/resolve/libs/unneeded/
+sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
+sudo mv /opt/resolve/libs/libgmodule* /opt/resolve/libs/unneeded/
+```
+
+## DeepCool Digital for Linux (https://github.com/Nortank12/deepcool-digital-linux)
+
+* Automatic Start with Systemd 
+```
+sudo cp ./deepcool-digital-linux /usr/sbin/
+sudo nano /etc/systemd/system/deepcool-digital.service
+```
+* Insert the following:
+```
+[Unit]
+Description=DeepCool Digital
+
+[Service]
+ExecStart=/usr/sbin/deepcool-digital-linux
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+```
+* Enable the service:
+```
+sudo systemctl enable deepcool-digital
+```
+
 ## Configuring the system and the GNOME graphical environment
 
 ### Set Hostname
