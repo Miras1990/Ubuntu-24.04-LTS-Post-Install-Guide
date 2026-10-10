@@ -51,18 +51,9 @@ sudo gpasswd -a ${USER} render
 newgrp render
 ```
 
-## [NVIDIA Cuda Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
+## NVIDIA Drivers and Cuda toolkit
 ```
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
-sudo dpkg -i cuda-keyring_1.1-1_all.deb
-sudo apt-get update
-sudo apt-get -y install cuda-toolkit-12-8
-```
-
-## NVIDIA Drivers from ppa
-```
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt update
+sudo apt install nvidia-driver-615 nvidia-cuda-toolkit
 ```
 
 ## [Install and Enable Intel Thermal Daemon](https://github.com/intel/thermal_daemon) - Intel Platform
