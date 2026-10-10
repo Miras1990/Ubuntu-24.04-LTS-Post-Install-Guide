@@ -131,27 +131,22 @@ sudo systemctl enable deepcool-digital
 ```
 ## [LogiOps](https://github.com/PixlOne/logiops)
 
-* Dependencies:
-```
-sudo apt install build-essential cmake pkg-config libevdev-dev libudev-dev libconfig++-dev libglib2.0-dev git
-```
-* Building:
-```
-git clone https://github.com/PixlOne/logiops.git
-cd logiops/
-mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
-make
-```
 * Installation:
 ```
-sudo make install
+sudo apt install logiops
 ```
-Download [logid.example.cfg](https://github.com/PixlOne/logiops/blob/main/logid.example.cfg) file and copy its contents to "/etc/logid.cfg"
-* Enable service:
+* Enable:
 ```
+sudo systemctl status logid
 sudo systemctl enable --now logid
+```
+* Restart after sleep:
+```
+sudo nano /lib/systemd/system-sleep/logid
+```
+* Paste this:
+```
+#!/bin/sh 
 ```
 
 ## Configuring the system and the GNOME graphical environment
