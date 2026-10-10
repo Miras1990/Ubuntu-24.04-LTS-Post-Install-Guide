@@ -1,4 +1,4 @@
-# Things to do after installing Ubuntu 24.04 LTS
+# Things to do after installing Ubuntu 26.04 LTS
 
 ## Install updates:
 ```
@@ -89,7 +89,7 @@ sudo apt install mesa-va-drivers mesa-vdpau-drivers vdpau-driver-all
 * The program works and detects Intel's integrated graphics!
 * Installation
 ```
-sudo apt install libfuse2t64 libapr1t64 libaprutil1t64 libasound2t64 libglib2.0-0t64 libxcb-composite0 libxcb-cursor0 libxcb-xinerama0 libxcb-xinput0
+sudo apt install libfuse2t64 libapr1t64 libaprutil1t64 libasound2t64 libglib2.0-0t64 libxcb-composite0 libxcb-cursor0 libxcb-xinerama0 libxcb-xinput0 libglu1-mesa
 unzip DaVinci_Resolve_*_Linux.zip
 chmod +x ./DaVinci_Resolve_*_Linux.run
 sudo SKIP_PACKAGE_CHECK=1 ./DaVinci_Resolve_*_Linux.run -i
