@@ -213,16 +213,16 @@ sudo apt install clinfo ricks-amdgpu-utils
 sudo systemctl disable NetworkManager-wait-online.service
 ```
 
-### Better Linux Disk Caching & Performance with vm.dirty_ratio & vm.dirty_background_ratio & Sharply reduce swap inclination
+### Better Linux Disk Caching & Performance with vm.dirty_ratio & vm.dirty_background_ratio & Sharply reduce swap inclination for 32GB RAM and NVME:
 ```
-vm.swappiness = 1
+m.swappiness = 1
 vm.vfs_cache_pressure = 50
-vm.dirty_background_ratio = 5
-vm.dirty_background_bytes = 0
-vm.dirty_ratio = 10
-vm.dirty_bytes = 0
-vm.dirty_writeback_centisecs = 500
-vm.dirty_expire_centisecs = 3000
+vm.dirty_background_ratio = 0
+vm.dirty_background_bytes = 67108864
+vm.dirty_ratio = 0
+vm.dirty_bytes = 1610612736
+vm.dirty_writeback_centisecs = 100
+vm.dirty_expire_centisecs = 500
 ```
 
 ### Gnome Extensions and Tweaks
