@@ -122,6 +122,8 @@ RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target
+# On headless servers, use this target instead if your GPU is not detected
+# WantedBy=graphical.target
 ```
 * Enable the service:
 ```
