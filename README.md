@@ -67,7 +67,7 @@ sudo systemctl status thermald.service
 ## Media Codecs
 * Install these to get proper multimedia playback:
 ```
-sudo apt install ubuntu-restricted-extras libavcodec-extra
+sudo apt install ubuntu-restricted-extras
 ```
 
 ## H/W Video Decoding with VA-API 
